@@ -1,0 +1,21 @@
+{
+  "files": [
+    {
+      "from": "test.hbs",
+      "to": "app/packages/{{name}}/spec/main.coffee"
+    },
+    {
+      "from": "test.hbs",
+      "to": "app/packages/{{name}}/spec/model.coffee"
+    },
+    {
+      "from": "test.hbs",
+      "to": "app/packages/{{name}}/spec/view.coffee"
+    },
+    {
+      "from": "test.hbs",
+      "to": "app/packages/{{name}}/spec/collection.coffee"
+    }
+  ],
+  "dependencies": []
+}
