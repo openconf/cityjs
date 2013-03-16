@@ -1,9 +1,9 @@
 define (require, exports, module) ->
-	
-	# Packages loading	
+
+	# Packages loading
 	demoPackage = require 'packages/demo'
-	friends = require 'packages/friends'
-	
+	speakerRegisterPackage = require 'packages/speaker-register'
+
 	#Utils and other
 	Utils = require 'shared/utils'
 
@@ -18,7 +18,7 @@ define (require, exports, module) ->
 		initialize: ->
 			Utils.bindRoutes @, [
 				demoPackage.Controller,
-        friends.Controller
+				speakerRegisterPackage.Controller
 			]
 
 		unknownRoute: ->

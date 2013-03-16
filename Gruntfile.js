@@ -49,7 +49,7 @@ module.exports = function(grunt) {
 				'generators/**/*.coffee',
 				'server/*.coffee'
 			],
-			tasks: ['sass', 'coffee', 'server']
+			tasks: ['coffee', 'server']
 		},
 
 		testacular: {
