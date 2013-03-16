@@ -9,6 +9,6 @@ define (require, exports, module)->
 			return
 
 		render: ->
-			@$el = @template(company:@model.toJSON())
+			@$el = @template company:@model.toJSON()
 			return @
 	return
