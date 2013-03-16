@@ -7,10 +7,9 @@ define (require, exports, module)->
 		routes:
 			'friends': 'friends'
 
-		friends: () ->
-			@currentView = new view.View(
+		friends: ->
+			@currentView = new view.View
 				collection:new collection.Friends()
-			)
 			$('#demo-box').parent().html @currentView.render().$el
 			return @
 	return
