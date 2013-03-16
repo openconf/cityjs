@@ -72,6 +72,11 @@ define (require, exports, module) ->
 				response: '{"id": 12, "comment": "Hey"}'
 			}
 			{
+				method: 'GET',
+				route: '/getFriends'
+				response: '[{"id":1, "name": "Acme 1",  "url": "http://acme1.com", "logoSrc":"/assets/img/mock_img.png"},{"id":2, "name": "Acme 2",  "url": "http://acme2.com", "logoSrc":"/assets/img/mock_img.png"},{"id":3, "name": "Acme 3",  "url": "http://acme3.com", "logoSrc":"/assets/img/mock_img.png"}]'
+			}
+			{
 				method: 'GET'
 				route: /\/organization\/users(\?.*?)?$/
 				response: _getUsers
