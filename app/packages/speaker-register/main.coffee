@@ -11,13 +11,13 @@ define (require, exports, module)->
 		register: ->
 			console.log('speaker-register');
 			@eventsColl = new collection.Collection();
-			@eventsColl.fetch({
+			@eventsColl.fetch
 				success: (coll, response, options) ->
 					@currentView = new view.View(
 						model: new model.Model()
 						collection: coll
 					)
 					$('#demo-box').html @currentView.render().$el
-			})
+
 			return @
 	return

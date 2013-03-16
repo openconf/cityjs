@@ -65,6 +65,27 @@ define (require, exports, module) ->
 					then 'AUTO_PUBLISH'
 					else 'MODERATE TOUTS'
 
+		_getEvents = (xhr, queryString) ->
+			items = [{
+				id: 1,
+				what: 'hell yeah',
+				where: 'Odessa',
+				when: '1 oct 2013'
+			},{
+				id: 2,
+				what: 'noooo',
+				where: 'Odessa',
+				when: '15 sep 2013'
+			}]
+			data = JSON.stringify(items)
+			response = _buildResponse data
+			xhr.respond.apply xhr, response
+
+		_registerSpeaker = (xhr, queryString) ->
+			data = _.extend(JSON.parse(xhr.requestBody), {id: _.uniqueId()})
+			response = _buildResponse JSON.stringify(data)
+			xhr.respond.apply xhr, response
+
 		requests = [
 			{
 				method: 'GET'
@@ -85,6 +106,16 @@ define (require, exports, module) ->
 				method: 'GET'
 				route: /\/organization\/user\/(\d+)/
 				response: _getUser
+			}
+			{
+				method: 'GET'
+				route: '/events'
+				response: _getEvents
+			}
+			{
+				method: 'POST'
+				route: '/register/speaker'
+				response: _registerSpeaker
 			}
 		]
 

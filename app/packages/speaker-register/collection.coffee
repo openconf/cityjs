@@ -1,5 +1,5 @@
 define (require, exports, module)->
-	exports.Collection = Backbone.Collection.extend(
+	exports.Collection = class Collection extends Backbone.Collection
 		url: '/events'
-	)
+
 	return

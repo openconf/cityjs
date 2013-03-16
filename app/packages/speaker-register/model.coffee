@@ -1,11 +1,13 @@
 define (require, exports, module)->
-	exports.Model = Backbone.Model.extend(
+	exports.Model = class Model extends Backbone.Model
 		url: '/register/speaker'
-
 		validation:
 			'event':
 				required: true
 				msg: 'Event is required'
+			'title':
+				required: true
+				msg: 'Title is required'
 			'username':
 				required: true
 				msg: 'Username is required'
@@ -19,5 +21,4 @@ define (require, exports, module)->
 					msg: 'Invalid email'
 				}
 			]
-	)
 	return
