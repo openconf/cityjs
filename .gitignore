@@ -25,4 +25,5 @@ server/*.js
 !app/assets/*
 !app/assets/*/*
 
-
+.idea/
+*.iml
