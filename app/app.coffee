@@ -1,7 +1,8 @@
 define (require, exports, module) ->
 	
-	# Packages loading	
+	# Packages loading
 	demoPackage = require 'packages/demo'
+	shedule = require 'packages/shedule'
 	
 	#Utils and other
 	Utils = require 'shared/utils'
@@ -17,9 +18,10 @@ define (require, exports, module) ->
 		initialize: ->
 			Utils.bindRoutes @, [
 				demoPackage.Controller
+				shedule.Controller
 			]
 
 		unknownRoute: ->
-			console.log 'unknown'
+			console.log 'unknown route'
 	}
 	return
