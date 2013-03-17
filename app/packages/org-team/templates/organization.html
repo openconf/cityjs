@@ -1,0 +1,24 @@
+<div class="container">
+    <h2><%= org.companyName%></h2>
+    <div class="row">
+        <div class="span12">
+            <div class="container">
+                <div class="row">
+                    <div class="span1">
+                        <img src='<%= org.logo%>' alt='<%= org.companyName%>'/>
+                    </div>
+                    <div class="span11">
+                        <ul class='item'>
+                            <li>Phone: <%= org.phone%></a></li>
+                            <li>Email: <%= org.email%></a></li>
+                            <li>Address: <%= org.address%></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="span12">
+            <%= org.about%>
+        </div>
+    </div>
+</div>

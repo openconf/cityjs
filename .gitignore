@@ -26,3 +26,5 @@ server/*.js
 !app/assets/*/*
 
 
+app/.idea/*
+app/packages/demo/.idea/*

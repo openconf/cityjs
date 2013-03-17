@@ -6,13 +6,8 @@ define (require, exports, module)->
 	exports.Controller = class Controller extends BaseController
 		routes:
 			'demo': 'demo'
-			'demo/:id': 'demo'
 
 		demo: ->
 			console.log 'demo'
-			@currentView = new view.View(
-				model: new model.Model()
-			)
-			$('#demo-box').html @currentView.render().$el
 			return @
 	return

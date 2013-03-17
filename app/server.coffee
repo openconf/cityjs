@@ -2,8 +2,11 @@
 
 define (require, exports, module) ->
 	require('sinon')
-	json =
-		users: JSON.parse require 'text!assets/json/users.json'
+
+	json = {
+    users: JSON.parse require 'text!assets/json/users.json'
+    orgs: JSON.parse require 'text!assets/json/orgs.json'
+  }
 
 	_buildResponse = (content, status = 200) ->
 		[
@@ -41,6 +44,19 @@ define (require, exports, module) ->
 			response = _buildResponse JSON.stringify(data), status
 			xhr.respond.apply xhr, response
 
+		_getOrg = (xhr, id) ->
+			org = null
+			id = parseInt id
+			org = _(json.orgs).findWhere {id: id}
+			if org
+				data = org
+				status = 200
+			else
+				data = {error: 'Organization not found'}
+				status = 404
+			response = _buildResponse JSON.stringify(data), status
+			xhr.respond.apply xhr, response
+
 		_getUsers = (xhr, queryString) ->
 			params = getQuerySringParams xhr.url
 			items = json.users.concat (_createUser id for id in [20..100])
@@ -65,6 +81,11 @@ define (require, exports, module) ->
 					then 'AUTO_PUBLISH'
 					else 'MODERATE TOUTS'
 
+		_getOrgs = (xhr) ->
+      data = JSON.stringify(json.orgs)
+      response = _buildResponse data
+      xhr.respond.apply xhr, response
+
 		requests = [
 			{
 				method: 'GET'
@@ -81,6 +102,16 @@ define (require, exports, module) ->
 				route: /\/organization\/user\/(\d+)/
 				response: _getUser
 			}
+      {
+        method: 'GET'
+        route: '/org'
+        response: _getOrgs
+      }
+      {
+        method: 'GET'
+        route: /\/org\/(\d+)/
+        response: _getOrg
+      }
 		]
 
 		for req in requests then do (req) ->

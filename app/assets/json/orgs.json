@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "logo": "http://placehold.it/60x60",
+        "companyName": "Lohika",
+        "phone": "853-500-3367",
+        "email": "info@lohika.com",
+        "address": "37969, Alaska, Broome Streets",
+        "about": "Nulla sit tincidunt volutpat enim illum, autem ex iriure hendrerit iriure, volutpat eum vulputate diam. Luptatum, diam ad laoreet dolor commodo, ullamcorper dolore minim commodo ut, elit consequat iusto. Facilisi consequat, esse in vel iusto illum, eros dolor commodo consequat eum, vel dolore. Exerci euismod nisl, delenit ad blandit suscipit dolor, consectetuer dolore ad dolore."
+    },
+    {
+        "id": 2,
+        "logo": "http://placehold.it/60x60",
+        "companyName": "Ciklum",
+        "phone": "841-471-3410",
+        "email": "info@ciklum.com",
+        "address": "28272, AmarilloAnaheim, Orchard Street",
+        "about": "Iusto et feugiat dolore dignissim minim, nulla dignissim molestie dolore dignissim, enim autem vulputate in. Vero, delenit vero commodo sit sed, qui blandit duis consequat vel, velit in et. Suscipit in, nonummy nonummy vulputate facilisis nonummy, at wisi ex duis qui, augue nisl. Velit consequat laoreet, zzril vel consectetuer magna duis, autem laoreet exerci amet nulla, sed. Ea ut dolor ut, wisi accumsan nulla et zzril, tation tation te facilisi zzril, autem sit amet at dolore, ad lobortis elit eros dolore, esse ex nostrud aliquip. Vel, accumsan at in odio diam."
+    }
+]
