@@ -1,8 +1,23 @@
-<h1>Login</h1>
-<form>
+<form class="form-horizontal">
 	<fieldset>
-		<input type="text" placeholder="Enter email"><br>
-		<input type="text" placeholder="Enter password">
-	</fieldset>
-	<button class="btn btn-primary" id="signin-btn">Login</button>
+      <legend>Login page</legend>
+      <div class="control-group">
+        <label for="email" class="control-label">Email*</label>
+        <div class="controls">
+          <input type="text" data-error-style="tooltip" name="email" id="email">
+        </div>
+      </div>
+      <div class="control-group">
+        <label for="password" class="control-label">Password*</label>
+        <div class="controls">
+          <input type="text" data-error-style="tooltip" name="password" id="password" >
+        </div>
+      </div>
+      <div class="control-group">
+      	<div class="controls">
+        	<button id="signin-btn" class="btn btn-primary" type="submit">Login</button>
+        </div>
+      </div>
+    </fieldset>
+	
 </form>

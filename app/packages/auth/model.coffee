@@ -11,6 +11,9 @@ define (require, exports, module)->
 			'lastName':
 				required: true
 				msg: 'Lastname is required'
+			'password':
+				required: true
+				msg: 'Password is required'
 			'email': [
 				{
 					required: true

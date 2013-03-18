@@ -66,8 +66,12 @@ define (require, exports, module) ->
 					else 'MODERATE TOUTS'
 
 		_signup = (xhr) ->
-			#console.log(xhr.requestBody)
-			console.log(JSON.parse(xhr.requestBody))
+			#console.log(JSON.parse(xhr.requestBody))
+			response = _buildResponse JSON.stringify({status: "ok", xhr: xhr.requestBody })
+			xhr.respond.apply xhr, response
+
+		_signin = (xhr) ->
+			#console.log(JSON.parse(xhr.requestBody))
 			response = _buildResponse JSON.stringify({status: "ok", xhr: xhr.requestBody })
 			xhr.respond.apply xhr, response
 			
@@ -97,6 +101,11 @@ define (require, exports, module) ->
 				method: 'POST'
 				route: '/auth/signup'
 				response: _signup
+			}
+			{
+				method: 'POST'
+				route: '/auth/signin'
+				response: _signin
 			}
 		]
 

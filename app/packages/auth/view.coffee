@@ -28,7 +28,6 @@ define (require, exports, module)->
 			formData = @$('form').serializeObject()
 			isValid = @model.validate(formData)
 			if !isValid 
-				console.log(isValid)
 				$.ajax 
 					url: '/auth/signup'
 					type: 'POST'
@@ -37,16 +36,21 @@ define (require, exports, module)->
 						user = JSON.parse(data.xhr)
 						alert "Поздравляем! Пользователь " + user.firstName + " " + user.lastName + " успешно зарегистрирован"
 
-				console.log "You try signup"
-			else 
-				#console.log(isValid)
-				$.each isValid, (field, msg) ->
-					console.log(field, msg)
 			return @
 
 		signin: (e) ->
 			e.preventDefault()
-			console.log "You try signin"
+			formData = @$('form').serializeObject()
+			isValid = @model.validate(formData)
+			if !isValid 
+				$.ajax 
+					url: '/auth/signin'
+					type: 'POST'
+					data: JSON.stringify(formData) 
+					success: (data) ->
+						user = JSON.parse(data.xhr)
+						alert "Вы вошли как " + user.email 
+
 			return @
 
 	return
