@@ -2,7 +2,10 @@ define (require, exports, module)->
 
 	view = require './view'
 
-	exports.View = class CollectionView extends Backbone.View
+	BaseView = require 'shared/base_view'
+	
+	exports.View = class CollectionView extends BaseView
+	#exports.View = class CollectionView extends Backbone.View
 
 		render: ->
 			@$el = $("<ul class='thumbnails'></ul>")

@@ -10,6 +10,6 @@ define (require, exports, module)->
 		friends: ->
 			@currentView = new view.View
 				collection:new collection.Friends()
-			$('#demo-box').parent().html @currentView.render().$el
+			$('#friend-box').html @currentView.render().$el
 			return @
 	return

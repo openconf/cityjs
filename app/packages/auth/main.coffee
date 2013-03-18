@@ -10,7 +10,7 @@ define (require, exports, module)->
 
 
 		signin: ->
-			console.log 'signin'
+			#console.log 'signin'
 			@currentView = new view.View(
 				model: new model.Model()
 			)
@@ -19,7 +19,7 @@ define (require, exports, module)->
 
 
 		signup: ->
-			console.log 'signup'
+			#console.log 'signup'
 			@currentView = new view.View(
 				model: new model.Model()
 			)
