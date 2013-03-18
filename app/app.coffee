@@ -20,7 +20,6 @@ define (require, exports, module) ->
 			Utils.bindRoutes @, [
 				demoPackage.Controller
 				friends.Controller
-				demoPackage.Controller
 				shedule.Controller
 			]
 
