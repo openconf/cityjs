@@ -3,6 +3,7 @@ define (require, exports, module) ->
 	# Packages loading	
 	demoPackage = require 'packages/demo'
 	friends = require 'packages/friends'
+	authPackage = require 'packages/auth'
 	
 	#Utils and other
 	Utils = require 'shared/utils'
@@ -17,8 +18,9 @@ define (require, exports, module) ->
 
 		initialize: ->
 			Utils.bindRoutes @, [
-				demoPackage.Controller,
-        friends.Controller
+				demoPackage.Controller
+        		friends.Controller
+        		authPackage.Controller
 			]
 
 		unknownRoute: ->

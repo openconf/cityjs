@@ -65,6 +65,17 @@ define (require, exports, module) ->
 					then 'AUTO_PUBLISH'
 					else 'MODERATE TOUTS'
 
+		_signup = (xhr) ->
+			#console.log(JSON.parse(xhr.requestBody))
+			response = _buildResponse JSON.stringify({status: "ok", xhr: xhr.requestBody })
+			xhr.respond.apply xhr, response
+
+		_signin = (xhr) ->
+			#console.log(JSON.parse(xhr.requestBody))
+			response = _buildResponse JSON.stringify({status: "ok", xhr: xhr.requestBody })
+			xhr.respond.apply xhr, response
+			
+
 		requests = [
 			{
 				method: 'GET'
@@ -85,6 +96,16 @@ define (require, exports, module) ->
 				method: 'GET'
 				route: /\/organization\/user\/(\d+)/
 				response: _getUser
+			}
+			{
+				method: 'POST'
+				route: '/auth/signup'
+				response: _signup
+			}
+			{
+				method: 'POST'
+				route: '/auth/signin'
+				response: _signin
 			}
 		]
 
