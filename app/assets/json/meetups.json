@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "title": "Первое мероприятие",
+        "description": "Это очень крутое описание первого мероприятия.",
+        "city": "Одесса, Украина",
+        "place": "Дальницкая, 46 - 2 этаж; БЦ Фабрика Бизнеса.",
+        "reports": [
+            {
+                "id": 1,
+                "reporter_name": "Чувак Первый",
+                "avatar_uri": "http://moscowdjango.s3.amazonaws.com/media/speakers/григорий_петров.jpg",
+                "title": "Доклад Первый",
+                "uri_title": "report-1",
+                "text": "Короче это первый крутой доклад. Тут Чувак Первый расскажет как делать дела! Слайды потом когда-то"
+            }, {
+                "id": 2,
+                "reporter_name": "Чувак Второй",
+                "avatar_uri": "http://moscowdjango.s3.amazonaws.com/media/speakers/volodchenkov.png",
+                "title": "Доклад Второй",
+                "uri_title": "report-2",
+                "text": "Короче это второй крутой доклад. Тут Чувак Второй расскажет как делать дела! Видео не будет"
+            }
+        ]
+    }, {
+        "id": 2,
+        "title": "Второе мероприятие",
+        "description": "Это очень крутое описание второго мероприятия.",
+        "city": "Киев, Украина",
+        "place": "Красная площадь",
+        "reports": [
+            {
+                "id": 3,
+                "reporter_name": "Чувак Третий",
+                "avatar_uri": "http://moscowdjango.s3.amazonaws.com/media/speakers/oransky2.jpg",
+                "title": "Доклад Третий",
+                "uri_title": "report-3-yo!",
+                "text": "Короче это третий крутой доклад. Тут Чувак Третий расскажет как делать дела! Слайды потом когда-то"
+            }, {
+                "id": 4,
+                "reporter_name": "Чувак Четвертый",
+                "avatar_uri": "http://moscowdjango.s3.amazonaws.com/media/speakers/Lihobabin.jpg",
+                "title": "Доклад Четвертый",
+                "uri_title": "report-4-its-true",
+                "text": "Короче это четвертый крутой доклад. Тут Чувак Четвертый расскажет как делать дела! Видео не будет"
+            }, {
+                "id": 5,
+                "reporter_name": "Чувак Пятый",
+                "avatar_uri": "http://moscowdjango.s3.amazonaws.com/media/speakers/bezukladnichy.jpg",
+                "title": "Доклад Пятый",
+                "uri_title": "report-5-yes",
+                "text": "Короче это пятый крутой доклад. Тут Чувак Пятый расскажет как делать дела! Видео не будет"
+            }
+        ]
+    }
+]
