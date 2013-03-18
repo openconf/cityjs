@@ -1,0 +1,53 @@
+<form class="form-horizontal">
+	<fieldset>
+      <legend>Register</legend>
+      <div class="control-group">
+        <label for="firstName" class="control-label">First Name</label>
+        <div class="controls">
+          <input type="text" data-error-style="inline" name="firstName" id="firstName" class="input-xlarge">
+        </div>
+      </div>
+      <div class="control-group">
+        <label for="lastName" class="control-label">Last Name</label>
+        <div class="controls">
+          <input type="text" data-error-style="inline" name="lastName" id="lastName" class="input-xlarge">
+        </div>
+      </div>
+      <div class="control-group">
+        <label for="email" class="control-label">Email</label>
+        <div class="controls">
+          <input type="text" data-error-style="inline" name="email" id="email" class="input-xlarge">
+        </div>
+      </div>
+      <div class="form-actions">
+        <button id="signup-btn" class="btn btn-primary" type="submit">Register</button>
+      </div>
+    </fieldset>
+	
+</form>
+
+<script>
+	$.fn.serializeObject = function()
+{
+    var o = {};
+    var a = this.serializeArray();
+    $.each(a, function() {
+        if (o[this.name] !== undefined) {
+            if (!o[this.name].push) {
+                o[this.name] = [o[this.name]];
+            }
+            o[this.name].push(this.value || '');
+        } else {
+            o[this.name] = this.value || '';
+        }
+    });
+    return o;
+};
+
+</script>
+<style>
+	.invalid {
+		border: 1px solid #f00 !important;
+		background: #eeeeff !important;
+	}
+</style>

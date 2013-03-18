@@ -40,5 +40,5 @@ require.config {
 		'sinon': 'assets/js/sinon-1.5.2'
 	},
 
-	packages: ['packages/demo', 'packages/organization', 'packages/friends']
+	packages: ['packages/demo', 'packages/organization', 'packages/friends', 'packages/auth']
 }
