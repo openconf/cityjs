@@ -1,5 +1,6 @@
 define (require, exports, module)->
-	view = require './view'
+	view_signin = require './view_signin'
+	view_signup = require './view_signup'
 	model = require './model'
 	BaseController = require 'shared/base_controller'
 
@@ -11,19 +12,19 @@ define (require, exports, module)->
 
 		signin: ->
 			#console.log 'signin'
-			@currentView = new view.View(
+			@currentView = new view_signin.View(
 				model: new model.Model()
 			)
-			$('#auth-box').html @currentView.render("login").$el
+			$('#auth-box').html @currentView.render().$el
 			return @
 
 
 		signup: ->
 			#console.log 'signup'
-			@currentView = new view.View(
+			@currentView = new view_signup.View(
 				model: new model.Model()
 			)
-			$('#auth-box').html @currentView.render("register").$el
+			$('#auth-box').html @currentView.render().$el
 			return @
 
 	return

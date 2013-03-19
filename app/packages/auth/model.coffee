@@ -1,8 +1,9 @@
 define (require, exports, module)->
 	exports.Model = Backbone.Model.extend(
-		url: '/test'
+		#url: '/test'
 		defaults:
-			username: 'Petro'
+			username: ''
+
 
 		validation:
 			'firstName':
@@ -24,5 +25,24 @@ define (require, exports, module)->
 					msg: 'Invalid email'
 				}
 			]
+
+		signin: (data) ->
+			$.ajax 
+				url: '/auth/signin'
+				type: 'POST'
+				data: JSON.stringify(data) 
+				success: (data) ->
+					user = JSON.parse(data.xhr)
+					alert "Вы вошли как " + user.email
+
+		signup: (data) ->
+			$.ajax 
+				url: '/auth/signup'
+				type: 'POST'
+				data: JSON.stringify(data) 
+				success: (data) ->
+					user = JSON.parse(data.xhr)
+					alert "Поздравляем! Пользователь " + user.firstName + " " + user.lastName + " успешно зарегистрирован"
+
 	)
 	return
