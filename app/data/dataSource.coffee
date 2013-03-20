@@ -1,11 +1,18 @@
 define (require, exports, module) ->
 	observer = {}
+	adapters = []
 	#TODO: read all configured adapters
 	# adapters are converting data based on a file type and content to JSON
 	# for example json files could be just parsed to json and html types could parse out microformats content
 	_.extend observer, Backbone.Events
+	
+	require module.config().adapters, () ->
+		adapters = arguments
+
 	exports.on = (type, callback) ->
-		#TODO: emulate mutability
+		if type instanceof Function
+			type = 'data'
+			callback = type
 		observer.bind type, callback
 	# .get(url) - get's reads configuration from given url
 	# if url starts with http - reads web adress, otherwise consider it local

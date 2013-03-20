@@ -4,6 +4,11 @@ require.config {
 	urlArgs: 'v'+(Date.now()),
 
 	config: {
+		'data/dataSource' : {
+			'adapters': [
+				'data/adapters/json'
+			]
+		},
 		'app': {
 			'fakeServer': true
 		}
