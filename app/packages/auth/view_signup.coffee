@@ -12,6 +12,12 @@ define (require, exports, module)->
 
 		initialize: ->
 			Backbone.Validation.bind(this) if @model?
+			@model.bind 'signup:success', (data) =>
+				user = JSON.parse(data.xhr)
+				alert "Congratulations! User " + user.firstName + " " + user.lastName + " successfully registered"
+			@model.bind 'signup:error', (data) =>
+				errorMsg = JSON.parse(data.responseText)
+				alert "Error " + errorMsg.error
 			return
 
 		render: ->

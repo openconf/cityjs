@@ -26,28 +26,25 @@ define (require, exports, module)->
 			]
 
 		signin: (data) ->
+			self = this
 			$.ajax 
 				url: '/auth/signin'
 				type: 'POST'
 				data: JSON.stringify(data) 
 				success: (data) ->
-					user = JSON.parse(data.xhr)
-					alert "You logged in as " + user.email
+					self.trigger "signin:success", data
 				error: (data) ->
-					errorMsg = JSON.parse(data.responseText)
-					alert "Error " + errorMsg.error
+					self.trigger "signin:error", data
 
 		signup: (data) ->
+			self = this
 			$.ajax 
 				url: '/auth/signup'
 				type: 'POST'
-				data: JSON.stringify(data) 
+				data: JSON.stringify(data)
 				success: (data) ->
-					user = JSON.parse(data.xhr)
-					alert "Congratulations! User " + user.firstName + " " + user.lastName + " successfully registered"
+					self.trigger "signup:success", data
 				error: (data) ->
-					errorMsg = JSON.parse(data.responseText)
-					alert "Error " + errorMsg.error
-
+					self.trigger "signup:error", data
 	)
 	return

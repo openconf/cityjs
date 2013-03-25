@@ -9,9 +9,15 @@ define (require, exports, module)->
 
 		events: 
 			'click #signin-btn': 'signin'
-
+		
 		initialize: ->
 			Backbone.Validation.bind(this) if @model?
+			@model.bind 'signin:success', (data) =>
+				user = JSON.parse(data.xhr)
+				alert "You logged in as " + user.email
+			@model.bind 'signin:error', (data) =>
+				errorMsg = JSON.parse(data.responseText)
+				alert "Error " + errorMsg.error
 			return
 
 		render: ->
