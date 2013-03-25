@@ -1,9 +1,8 @@
 define (require, exports, module)->
 	exports.Model = Backbone.Model.extend(
-		#url: '/test'
+		
 		defaults:
 			username: ''
-
 
 		validation:
 			'firstName':
@@ -33,7 +32,10 @@ define (require, exports, module)->
 				data: JSON.stringify(data) 
 				success: (data) ->
 					user = JSON.parse(data.xhr)
-					alert "Вы вошли как " + user.email
+					alert "You logged in as " + user.email
+				error: (data) ->
+					errorMsg = JSON.parse(data.responseText)
+					alert "Error " + errorMsg.error
 
 		signup: (data) ->
 			$.ajax 
@@ -42,7 +44,10 @@ define (require, exports, module)->
 				data: JSON.stringify(data) 
 				success: (data) ->
 					user = JSON.parse(data.xhr)
-					alert "Поздравляем! Пользователь " + user.firstName + " " + user.lastName + " успешно зарегистрирован"
+					alert "Congratulations! User " + user.firstName + " " + user.lastName + " successfully registered"
+				error: (data) ->
+					errorMsg = JSON.parse(data.responseText)
+					alert "Error " + errorMsg.error
 
 	)
 	return

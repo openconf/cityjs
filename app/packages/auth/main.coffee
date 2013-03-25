@@ -9,21 +9,15 @@ define (require, exports, module)->
 			'signin': 'signin'
 			'signup': 'signup'
 
-
 		signin: ->
-			#console.log 'signin'
-			@currentView = new view_signin.View(
+			@currentView = new view_signin.View
 				model: new model.Model()
-			)
 			$('#auth-box').html @currentView.render().$el
 			return @
 
-
 		signup: ->
-			#console.log 'signup'
-			@currentView = new view_signup.View(
+			@currentView = new view_signup.View
 				model: new model.Model()
-			)
 			$('#auth-box').html @currentView.render().$el
 			return @
 

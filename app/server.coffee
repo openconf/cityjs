@@ -66,13 +66,25 @@ define (require, exports, module) ->
 					else 'MODERATE TOUTS'
 
 		_signup = (xhr) ->
-			#console.log(JSON.parse(xhr.requestBody))
-			response = _buildResponse JSON.stringify({status: "ok", xhr: xhr.requestBody })
+			request = JSON.parse(xhr.requestBody)
+			if request.email != "error@error.com"
+				data = {status: "ok", xhr: xhr.requestBody }
+				status = 200
+			else
+				data = {error: 'User already registered'}
+				status = 404
+			response = _buildResponse JSON.stringify(data), status
 			xhr.respond.apply xhr, response
 
 		_signin = (xhr) ->
-			#console.log(JSON.parse(xhr.requestBody))
-			response = _buildResponse JSON.stringify({status: "ok", xhr: xhr.requestBody })
+			request = JSON.parse(xhr.requestBody)
+			if request.email != "error@error.com"
+				data = {status: "ok", xhr: xhr.requestBody }
+				status = 200
+			else
+				data = {error: 'User not found'}
+				status = 404
+			response = _buildResponse JSON.stringify(data), status
 			xhr.respond.apply xhr, response
 			
 
