@@ -1,7 +1,7 @@
 define (require, exports, module) ->
 
-	Meetup = require('./model_meetup')
-	Report = require('./model_report')
+	Meetup = require './model_meetup'
+	Report = require './model_report'
 
 	exports.Meetups = class MeetupsCollection extends Backbone.Collection
 		url: "/shedule/meetups/"
@@ -14,10 +14,5 @@ define (require, exports, module) ->
 					reports.push new Report.Report report
 				meetup.reports = reports
 			meetups
-
-		sync: ->
-			console.log "SYNC"
-			console.log arguments
-			super
 
 	return

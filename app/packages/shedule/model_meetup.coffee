@@ -9,10 +9,4 @@ define (require, exports, module)->
 			place: 'Short comments for meetup place. Room number, street etc.'
 			reports: []
 
-		sync: ->
-			console.log "MEETUP SYNC"
-			console.log arguments
-			super
-
-
 	return

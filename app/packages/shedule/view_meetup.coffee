@@ -6,22 +6,13 @@ define (require, exports, module) ->
 	exports.View = class MyView extends BaseView
 		template: _.template tpl
 
-#		events:
-#			'click #demo-open': 'showNotification'
-
 		initialize: (meetup)->
 			@meetup = meetup.meetup
-			#			Backbone.Validation.bind(this) if @model?
 			return
 
 		render: =>
-			console.log "Meetup"
-			console.log @meetup
-
 			@meetup.fetch "1", -> # FIXME
 				success: =>
-					console.log "Meetups fetched"
-					console.log @meetups
 					@$el.html @template
 					            data:
 						            meetup: @meetup.attributes
@@ -29,7 +20,7 @@ define (require, exports, module) ->
 					console.log "err"
 					console.log arguments
 
-			return @
+			@
 
 
 	return
