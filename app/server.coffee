@@ -65,6 +65,29 @@ define (require, exports, module) ->
 					then 'AUTO_PUBLISH'
 					else 'MODERATE TOUTS'
 
+		_signup = (xhr) ->
+			request = JSON.parse(xhr.requestBody)
+			if request.email != "error@error.com"
+				data = {status: "ok", xhr: xhr.requestBody }
+				status = 200
+			else
+				data = {error: 'User already registered'}
+				status = 404
+			response = _buildResponse JSON.stringify(data), status
+			xhr.respond.apply xhr, response
+
+		_signin = (xhr) ->
+			request = JSON.parse(xhr.requestBody)
+			if request.email != "error@error.com"
+				data = {status: "ok", xhr: xhr.requestBody }
+				status = 200
+			else
+				data = {error: 'User not found'}
+				status = 404
+			response = _buildResponse JSON.stringify(data), status
+			xhr.respond.apply xhr, response
+			
+
 		requests = [
 			{
 				method: 'GET'
@@ -85,6 +108,16 @@ define (require, exports, module) ->
 				method: 'GET'
 				route: /\/organization\/user\/(\d+)/
 				response: _getUser
+			}
+			{
+				method: 'POST'
+				route: '/auth/signup'
+				response: _signup
+			}
+			{
+				method: 'POST'
+				route: '/auth/signin'
+				response: _signin
 			}
 		]
 

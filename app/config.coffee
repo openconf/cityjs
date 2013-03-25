@@ -19,26 +19,34 @@ require.config {
 		},
 		'backbone.paginator': ['backbone'],
 		'bootstrap': ['jquery'],
-		'backbone.validation': ['backbone'],
+		'serialize': ['jquery'],
+		'backbone.validation': [
+			'backbone',
+			'serialize'
+		],
+		'validation.bootstrap': ['backbone.validation'],
 		'backbone.routefilter': ['backbone'],
 		'app': [
 			'text',
 			'backbone.validation',
-			'bootstrap'
+			'bootstrap',
+			'validation.bootstrap'
 		]
 	},
 
 	paths: {
 		'text': 'assets/js/text',
+		'serialize': 'assets/js/serialize',
 		'backbone': 'assets/js/backbone-0.9.10',
 		'underscore': 'assets/js/underscore-1.4.4',
 		'backbone.paginator': 'assets/js/backbone.paginator',
 		'jquery': 'assets/js/jquery-1.9.1',
 		'backbone.validation': 'assets/js/backbone.validation',
+		'validation.bootstrap': 'assets/js/backbone.validation.bootstrap',
 		'bootstrap': 'assets/js/bootstrap',
 		'handlebars': 'assets/js/handlebars',
 		'sinon': 'assets/js/sinon-1.5.2'
 	},
 
-	packages: ['packages/demo', 'packages/organization', 'packages/friends']
+	packages: ['packages/demo', 'packages/organization', 'packages/friends', 'packages/auth']
 }

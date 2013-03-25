@@ -1,7 +1,10 @@
 define (require, exports, module)->
 	tpl = require 'text!./templates/friend.html'
 
-	exports.View = class View extends Backbone.View
+	BaseView = require 'shared/base_view'
+	
+	exports.View = class View extends BaseView
+
 		template: _.template tpl
 
 		initialize: ->

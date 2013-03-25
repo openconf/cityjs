@@ -9,7 +9,7 @@ define (require, exports, module)->
 			'demo/:id': 'demo'
 
 		demo: ->
-			console.log 'demo'
+			#console.log 'demo'
 			@currentView = new view.View(
 				model: new model.Model()
 			)
