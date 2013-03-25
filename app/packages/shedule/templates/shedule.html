@@ -1,0 +1,29 @@
+
+<% _.each(data.meetups, function(meetup) { meetup=meetup.attributes; %>
+
+        <div id="shedule-item-<%=meetup.id%>">
+            <a href="#shedule/<%=meetup.id%>"><h1><%=meetup.title%></h1></a>
+            <div style="width:200pt; float:left; margin-right: 20pt;">
+                <b>Город:</b> <%=meetup.city%><br>
+                <b>Местоположение:</b> <%=meetup.place%><br>
+                <b>Описание:</b> <%=meetup.description%>
+            </div>
+            <div style="position: relative; overflow: hidden;">
+                <% _.each(meetup.reports, function(report) { report = report.attributes; %>
+                    <div style="width:200pt; border: 1px solid #ccc; float:left; margin: 1pt; padding: 1pt;">
+                        <div style="width:70px; height: 70px; overflow: hidden; margin-right: 3px; float: left;">
+                            <img src="<%=report.avatar_uri%>" width=70 style="border-radius: 35px;" />
+                        </div>
+                        <div style="position: relative; overflow: hidden;">
+                            <a href="#shedule/<%=meetup.id%>/<%=report.uri_title%>"><%=report.title%></a><br>
+                            <%=report.reporter_name%>
+                        </div>
+                        <div style="clear: left;"></div>
+                    </div>
+                <% }) %>
+                <div style="clear:left;">
+            </div>
+        </div>
+        <div style="clear:both;"></div>
+
+<% }) %>
