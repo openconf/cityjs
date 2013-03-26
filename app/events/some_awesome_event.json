@@ -1,0 +1,9 @@
+{
+	"name":"Some awesome Event",
+	"geo":{
+		"latt":10,
+		"long":10
+	},
+	"time":"Tue Mar 26 2014 17:11:36 GMT+0200 (EET)",
+	"duration":"1d"
+}

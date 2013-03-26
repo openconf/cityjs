@@ -1,11 +1,10 @@
 define (require, exports, module) ->
-	validate = (body) ->
-		try
-			JSON.parse body
-		catch e
-			return false
-		true
+	validate = (data) ->
+		_(data).isObject()
 
-	exports.parse = (body, header) ->
-		return false if not validate(body)
-		JSON.parse(body)
+	exports.parse = (data, result, callback) ->
+		return callback null, data, result if not validate(data.content)
+		resultData = 
+			url: data.url
+		
+		callback null, data, _.extend(result, data.content, resultData)
