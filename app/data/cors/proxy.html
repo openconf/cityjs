@@ -12,7 +12,8 @@
 				top.postMessage({
 					me:'cors',
 					url:event.data.url,
-					content: content
+					content: content,
+					origin: document.location.host
 				}, '*');
 			});
 		})

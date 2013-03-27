@@ -19,6 +19,8 @@ define (require, exports, module) ->
 		if _(initial).isFunction()
 			callback = initial
 			initial = {}
+		if url.indexOf('http://') is -1 and initial.origin
+			url = ['http://',initial.origin,url].join('')
 		proxy.getUrl url, initial, (err, data)->
 			chain = [(callback)->
 				callback(null, data, initial)
@@ -37,8 +39,7 @@ define (require, exports, module) ->
 		getOne url, initial, (err, data, result) ->
 			if _(result).isArray()
 				return async.map result, mapper, (err, results)->
-					#_.each results, (el, i)->
-						#_.extend results[i], result[i]
+					results = _.flatten(results)
 					callback err, results
 			else
 				callback err, result

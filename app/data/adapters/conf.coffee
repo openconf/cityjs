@@ -18,12 +18,15 @@ define (require, exports, module) ->
 				meta = _.extend meta,props
 				return parser lines, result, meta
 			else if line.charAt(0) isnt '#' and line.length isnt 0
-				data = {
+				addData = {
+					origin: data.origin
 					url: line.trim()
 				}
-				data = _.extend(data, meta)
-				result.push data
+				addData = _.extend(addData, meta)
+				result.push addData
 				meta = {}
+
 			return parser lines, result, meta
+		
 		result = parser data.content.split('\n')
 		callback null, data, result
