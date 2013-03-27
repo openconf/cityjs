@@ -18,8 +18,8 @@ define (require, exports, module) ->
 	getOne = (url, initial, callback) ->
 		if _(initial).isFunction()
 			callback = initial
-			initial = {}	
-		proxy.getUrl url, (err, data)->
+			initial = {}
+		proxy.getUrl url, initial, (err, data)->
 			chain = [(callback)->
 				callback(null, data, initial)
 			].concat adapters
@@ -34,9 +34,11 @@ define (require, exports, module) ->
 		if _(initial).isFunction()
 			callback = initial
 			initial = {}
-		getOne url, (err, data, result) ->
+		getOne url, initial, (err, data, result) ->
 			if _(result).isArray()
 				return async.map result, mapper, (err, results)->
+					#_.each results, (el, i)->
+						#_.extend results[i], result[i]
 					callback err, results
 			else
 				callback err, result
