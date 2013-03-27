@@ -4,6 +4,12 @@ require.config {
 	urlArgs: 'v'+(Date.now()),
 
 	config: {
+		'data/dataSource' : {
+			'adapters': [
+				'data/adapters/json'
+				'data/adapters/conf'
+			]
+		},
 		'app': {
 			'fakeServer': true
 		}
@@ -37,7 +43,8 @@ require.config {
 		'backbone.validation': 'assets/js/backbone.validation',
 		'bootstrap': 'assets/js/bootstrap',
 		'handlebars': 'assets/js/handlebars',
-		'sinon': 'assets/js/sinon-1.5.2'
+		'sinon': 'assets/js/sinon-1.5.2',
+		'async': 'assets/js/async'
 	},
 
 	packages: ['packages/demo', 'packages/organization', 'packages/shedule', 'packages/friends']

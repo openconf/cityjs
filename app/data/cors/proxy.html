@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="/assets/js/jquery-1.9.1.min.js">\x3C/script>')</script>
+	</head>
+	<body>
+	<script>
+		$(window).on('message', function(e){
+			var event = e.originalEvent;
+			$.ajax(event.data.url).done(function(content){
+				top.postMessage({
+					me:'cors',
+					url:event.data.url,
+					content: content,
+					origin: document.location.host
+				}, '*');
+			});
+		})
+	</script>
+	</body>
+</html>
