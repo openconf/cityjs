@@ -4,6 +4,7 @@ define (require, exports, module) ->
 	require('sinon')
 	json =
 		users: JSON.parse require 'text!assets/json/users.json'
+		meetups: JSON.parse require 'text!assets/json/meetups.json'
 
 	_buildResponse = (content, status = 200) ->
 		[
@@ -85,6 +86,11 @@ define (require, exports, module) ->
 				method: 'GET'
 				route: /\/organization\/user\/(\d+)/
 				response: _getUser
+			}
+			{
+				method: 'GET'
+				route: '/shedule/meetups/'
+				response: JSON.stringify json.meetups
 			}
 		]
 
