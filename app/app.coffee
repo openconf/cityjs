@@ -3,9 +3,9 @@ define (require, exports, module) ->
 	# Packages loading	
 	demoPackage = require 'packages/demo'
 	friends = require 'packages/friends'
-	data = require 'data/dataSource'
-	data().get '/published.conf', ()->
-		console.log arguments
+	#data = require 'data/dataSource'
+	#data().get '/published.conf', ()->
+		#console.log arguments
 
 	#Utils and other
 	Utils = require 'shared/utils'
