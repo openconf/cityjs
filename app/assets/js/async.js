@@ -1,3 +1,4 @@
+/*PATCHED version to make tests work*
 /*global setImmediate: false, setTimeout: false, console: false */
 (function () {
 
@@ -73,9 +74,10 @@
     //// exported async module functions ////
 
     //// nextTick implementation with browser-compatible fallback ////
-    if (typeof process === 'undefined' || !(process.nextTick)) {
+		if (typeof process === 'undefined' || !(process.nextTick) || (typeof process.nextTick === 'function')) {
 				if (typeof setImmediate === 'function') {
-            async.setImmediate = setImmediate;
+            
+						async.setImmediate = setImmediate;
             async.nextTick = setImmediate;
         }
         else {
@@ -87,6 +89,7 @@
         }
     }
     else {
+			dump('fuck');
         async.nextTick = process.nextTick;
         async.setImmediate = setImmediate;
     }
