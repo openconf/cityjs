@@ -78,6 +78,11 @@ define (require, exports, module) ->
 				response: '[{"id":1, "name": "Acme 1",  "url": "http://acme1.com", "logoSrc":"/assets/img/mock_img.png"},{"id":2, "name": "Acme 2",  "url": "http://acme2.com", "logoSrc":"/assets/img/mock_img.png"},{"id":3, "name": "Acme 3",  "url": "http://acme3.com", "logoSrc":"/assets/img/mock_img.png"}]'
 			}
 			{
+				method: 'GET',
+				route: '/getPartners'
+				response: '[{"id":1, "name": "Partner 1",  "url": "http://partner1.com", "logoSrc":"/assets/img/mock_img.png"},{"id":2, "name": "Partner 2",  "url": "http://partner2.com", "logoSrc":"/assets/img/mock_img.png"}]'
+			}
+			{
 				method: 'GET'
 				route: /\/organization\/users(\?.*?)?$/
 				response: _getUsers
