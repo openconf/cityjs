@@ -27,3 +27,5 @@ server/*.js
 
 .idea/
 *.iml
+
+coverage

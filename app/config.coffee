@@ -47,5 +47,5 @@ require.config {
 		'async': 'assets/js/async'
 	},
 
-	packages: ['packages/demo', 'packages/organization', 'packages/shedule', 'packages/friends']
+	packages: ['packages/demo', 'packages/organization', 'packages/shedule', 'packages/friends', 'packages/speackers_list']
 }
