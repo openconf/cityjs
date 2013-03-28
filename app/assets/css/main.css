@@ -8,3 +8,12 @@ body {
   background-color: #f8f8f8; }
   .table-users tfoot td.pagination-wrap .pagination {
     margin: 0px; }
+
+.info-wrapper {
+  width: 600px;
+  float: right; }
+  .info-wrapper .city-name-heading {
+    font-size: 20px; }
+    .info-wrapper .city-name-heading .meetup-datetime {
+      color: #999;
+      font-size: 16px; }

@@ -112,4 +112,5 @@ module.exports = function(grunt) {
 	// Setip tasks, wanch should be last
 	grunt.registerTask('run', [ 'coffee', 'connect', 'livereload-start', 'testacular', 'regarde']);
 	grunt.registerTask('default', ['run']);
+	grunt.option('force', true);
 };
