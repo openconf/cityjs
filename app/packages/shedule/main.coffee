@@ -12,17 +12,17 @@ define (require, exports, module)->
 			'shedule/:id': 'meetup'
 
 		shedule: ->
-			@sheduleView = new view.View
+			@currentView = @sheduleView = new view.View
 				meetups: new collection_meetups.Meetups()
 
-			$('#shedule-box').html @sheduleView.render().$el
+			$('#demo-box').html @sheduleView.render().$el
 			@
 
 		meetup: ->
-			@meetupView = new view_meetup.View
+			@currentView = @meetupView = new view_meetup.View
 				meetup: new model_meetup.Meetup()
 
-			$('#shedule-box').html @meetupView.render().$el
+			$('#demo-box').html @meetupView.render().$el
 			@
 
 	return

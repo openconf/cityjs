@@ -5,7 +5,7 @@ define (require, exports, module) ->
 	json =
 		users: JSON.parse require 'text!assets/json/users.json'
 		meetups: JSON.parse require 'text!assets/json/meetups.json'
-
+		events: JSON.parse require 'text!assets/json/events.json'
 	_buildResponse = (content, status = 200) ->
 		[
 			status
@@ -91,6 +91,11 @@ define (require, exports, module) ->
 				method: 'GET'
 				route: '/shedule/meetups/'
 				response: JSON.stringify json.meetups
+			}
+			{
+				method: 'GET'
+				route: '/api/events'
+				response: JSON.stringify json.events
 			}
 		]
 
