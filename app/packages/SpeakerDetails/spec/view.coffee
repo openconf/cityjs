@@ -1,12 +1,14 @@
 expect = chai.expect
 
-describe 'Test', ->
-	dep = null
+describe 'SpeakerView test', ->
+	View = null
 
 	beforeEach (done) ->
-		require [], (_dep) ->
-			dep = _dep
+		require ['packages/SpeakerDetails/speaker_view'], (_dep) ->
+			View = _dep.SpeakerView
 			done()
 
-	it 'should be test', (done) ->
-		done()
+	it 'should be test', ->
+		expect(View).to.be.a 'function'
+		v = new View()
+		expect(v instanceof Backbone.View).to.be.ok
