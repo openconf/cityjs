@@ -5,6 +5,7 @@ define (require, exports, module) ->
 	friends = require 'packages/friends'
 	shedule = require 'packages/shedule'
 	#data = require 'data/dataSource'
+	speackersList = require 'packages/speackers_list'
 	#data().get '/published.conf', ()->
 		#console.log arguments
 
@@ -24,6 +25,7 @@ define (require, exports, module) ->
 				demoPackage.Controller
 				friends.Controller
 				shedule.Controller
+				speackersList.Controller
 			]
 
 		unknownRoute: ->

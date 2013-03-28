@@ -102,6 +102,7 @@ module.exports = function(grunt) {
 		}
 
 	});
+	grunt.option('force', true);
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-regarde');

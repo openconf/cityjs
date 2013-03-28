@@ -14,8 +14,8 @@ files = [
 	{pattern: 'app/assets/js/require-2.1.4.js', included: true, served: true, watched: true}
 	'app/config.js'
 	'tests/test-config.js'
-	{pattern: 'app/packages/**/spec/*.js', included: true, served: true, watched: true}
 	{pattern: 'tests/spec/**/*.js', included: true, served: true, watched: true}
+	{pattern: 'app/packages/**/spec/*.js', included: true, served: true, watched: true}
 
 	{pattern: 'app/assets/json/*.json', included: false, served: true, watched: true}
 	{pattern: 'app/*.js', included: false, served: true, watched: true}
@@ -32,8 +32,12 @@ exclude = [
 
 # test results reporter to use
 # possible values: 'dots', 'progress', 'junit'
-reporters = ['progress']
 
+reporters = ['progress', 'coverage'];
+
+preprocessors = {
+  '**/app/**/*.js': 'coverage'
+};
 
 # web server port
 port = 9876
@@ -64,7 +68,7 @@ autoWatch = on
 # - Safari (only Mac)
 # - PhantomJS
 # - IE (only Windows)
-browsers = ['PhantomJS']
+browsers = ['Chrome']
 
 
 # If browser does not capture in given timeout [ms], kill it
