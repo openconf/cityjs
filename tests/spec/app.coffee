@@ -18,4 +18,4 @@ describe 'Application test', ->
 		expect(App).to.have.property 'unknownRoute'
 		expect(App.unknownRoute).to.be.a 'function'
 		done()
-		
+
