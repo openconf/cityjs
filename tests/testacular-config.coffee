@@ -20,7 +20,7 @@ files = [
 	{pattern: 'app/packages/**/spec/*.js', included: true, served: true, watched: true}
 	
 
-	{pattern: 'app/assets/js/gmaps.js', included: false, served: true, watched: true}
+	#{pattern: 'app/assets/js/gmaps.js', included: false, served: true, watched: true}
 	{pattern: 'app/assets/json/*.json', included: false, served: true, watched: true}
 	{pattern: 'app/*.js', included: false, served: true, watched: true}
 	{pattern: 'app/**/*.js', included: false, served: true, watched: true}
