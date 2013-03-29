@@ -12,11 +12,13 @@ files = [
 	MOCHA_ADAPTER
 	{pattern: 'tests/vendor/*.js', included: true, served: true, watched: true}
 	{pattern: 'app/assets/js/require-2.1.4.js', included: true, served: true, watched: true}
+	'http://maps.googleapis.com/maps/api/js?v=3&sensor=true'
 	'app/config.js'
 	'tests/test-config.js'
-	{pattern: 'app/packages/**/spec/*.js', included: true, served: true, watched: true}
+	
 	{pattern: 'tests/spec/**/*.js', included: true, served: true, watched: true}
-
+	{pattern: 'app/packages/**/spec/*.js', included: true, served: true, watched: true}
+	
 	{pattern: 'app/assets/json/*.json', included: false, served: true, watched: true}
 	{pattern: 'app/*.js', included: false, served: true, watched: true}
 	{pattern: 'app/**/*.js', included: false, served: true, watched: true}
@@ -64,7 +66,11 @@ autoWatch = on
 # - Safari (only Mac)
 # - PhantomJS
 # - IE (only Windows)
-browsers = ['PhantomJS']
+browsers = [
+	'Chrome'
+	#'Firefox'
+	#'PhantomJS'
+]
 
 
 # If browser does not capture in given timeout [ms], kill it

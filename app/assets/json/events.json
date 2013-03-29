@@ -1,0 +1,20 @@
+[
+    {
+        "name": "KievJS",
+        "lat": 50.4500,
+        "lng": 30.5233,
+        "info": "<h4>In Kiev you can listen cool speech about AngularJS</h4>"
+    },
+    {
+        "name": "LvivJS",
+        "lat": 49.8333,
+        "lng": 24.0000,
+        "info": "<h4>In Lviv you can listen cool speech about BackboneJS</h4>"
+    },
+    {
+        "name": "OdessaJS",
+        "lat": 46.484583,
+        "lng": 30.7326,
+        "info": "<h4>In Odessa you can listen cool speech about CoffeeScript</h4>"
+    }
+]
