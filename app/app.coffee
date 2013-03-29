@@ -4,7 +4,7 @@ define (require, exports, module) ->
 	demoPackage = require 'packages/demo'
 	friends = require 'packages/friends'
 	shedule = require 'packages/shedule'
-	eventsMapPackage = require 'packages/events-map'
+	eventsMapPackage = require 'packages/events_map'
 	#data = require 'data/dataSource'
 	#data().get '/published.conf', ()->
 		#console.log arguments

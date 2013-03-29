@@ -4,7 +4,7 @@ describe 'EventModel', ->
 	EventModel = null
 
 	beforeEach (done) ->
-		require ['packages/events-map/model'], (_EventModel) ->
+		require ['packages/events_map/model'], (_EventModel) ->
 			EventModel = _EventModel
 			done()
 

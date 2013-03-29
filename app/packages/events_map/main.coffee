@@ -4,18 +4,14 @@ define (require, exports, module)->
 	BaseController = require 'shared/base_controller'
 
 	exports.Controller = class Controller extends BaseController
-		routes: {
+		routes:
 			'events-map': 'renderEventsMap'
-		}
 
 		renderEventsMap: ->
 			eventsCollection = new EventsCollection
 			eventsCollection.fetch
 				success: =>
 					@renderEventsView(eventsCollection)
-			
-			#console.log 'going to render events map'
-			@
 
 		renderEventsView: (eventsCollection) ->
 			@currentView = new EventsView

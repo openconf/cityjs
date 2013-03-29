@@ -4,7 +4,7 @@ describe 'Controller', ->
 	Controller = null
 
 	beforeEach (done) ->
-		require ['packages/events-map'], (_package) ->
+		require ['packages/events_map'], (_package) ->
 			Controller = _package.Controller
 			done()
 

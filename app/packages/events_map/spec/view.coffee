@@ -6,8 +6,8 @@ describe 'EventsView', ->
 
 	beforeEach (done) ->
 		require [
-			'packages/events-map/view'
-			'packages/events-map/collection'
+			'packages/events_map/view'
+			'packages/events_map/collection'
 		], (_EventsView, _EventsCollection) ->
 			EventsView = _EventsView
 			EventsCollection = _EventsCollection
