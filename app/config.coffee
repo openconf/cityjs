@@ -46,6 +46,5 @@ require.config {
 		'sinon': 'assets/js/sinon-1.5.2',
 		'async': 'assets/js/async'
 	},
-
 	packages: ['packages/demo', 'packages/organization', 'packages/shedule', 'packages/friends']
 }
